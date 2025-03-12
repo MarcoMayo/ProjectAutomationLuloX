@@ -20,7 +20,6 @@ public class InteractWithChat implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                NavigateToChat.window(),
                 Enter.theValue(message).into(ChatPage.TEXT_INPUT),
                 JavaScriptClick.on(ChatPage.BUTTON_SEND)
         );

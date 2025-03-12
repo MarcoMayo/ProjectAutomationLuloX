@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,10 +13,10 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import org.openqa.selenium.WebDriver;
-import tasks.front.ChangeUserNameInChat;
-import tasks.front.InteractWithChat;
-import tasks.front.SelectQuickReplyOption;
+import tasks.front.*;
 import userinterface.ChatPage;
+
+import java.util.List;
 
 public class ChatLuloXStepDefinition {
 
@@ -38,7 +39,10 @@ public class ChatLuloXStepDefinition {
 
     @When("the user sends the message {string} through the chat")
     public void theUserSendsTheMessageThroughTheChat(String message) {
-        actor.attemptsTo(InteractWithChat.withMessage(message));
+        actor.attemptsTo(
+                NavigateToChat.window(),
+                InteractWithChat.withMessage(message)
+        );
     }
 
     @Then("the user should see the sent message {string} displayed in the chat")
@@ -62,6 +66,20 @@ public class ChatLuloXStepDefinition {
     public void theUserShouldSeeTheirNameUpdatedToInTheChat(String arg0) {//No es evidente el cambio de nombre
         actor.attemptsTo(
                 Ensure.that(ChatPage.TEXT_BUBBLE.of("Bienvenido al chat de servicio de Lulo X")).isDisplayed()
+        );
+    }
+
+    @When("the user sends the following messages through the chat:")
+    public void theUserSendsTheFollowingMessagesThroughTheChat(DataTable data) {
+        List<String> messages = data.asList();
+        actor.attemptsTo(NavigateToChat.window());
+        actor.attemptsTo(SendChatMessagesToAgent.with(messages));
+    }
+
+    @Then("the user should see the last messages displayed in the chat {string}")
+    public void theUserShouldSeeTheLastMessagesDisplayedInTheChat(String message) {
+        actor.attemptsTo(
+                Ensure.that(ChatPage.LAST_MESSAGE_AGENT.of(message)).isDisplayed()
         );
     }
 }

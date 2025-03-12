@@ -29,4 +29,10 @@ public class ChatPage {
     public static final Target BUTTON_SEND_NAME = Target.the("Button send name")
             .located(By.xpath("//button[@title='Enviar']"));
 
+    public static final Target MESSAGE_AGENT = Target.the("Message from agent")
+            .located(By.xpath("//*[@class='tawk-message-bubble']//*[contains(@class,'agent-chat-bubble')]"));
+
+    public static final Target LAST_MESSAGE_AGENT = Target.the("Message from agent")
+            .locatedBy("(//*[contains(@class,'agent-chat-bubble')])[last()]//*[contains(text(),'{0}')]");
+
 }
