@@ -29,5 +29,5 @@ Feature: Interaction with of chat LuloX
       | Hola                                        |
       | Tengo problemas con mi compra               |
       | No pude finalizar. Quiero reportar el error |
-      | Si, quiero que me guies                     |
+      | Quiero que me des los pasos para reportar   |
     Then the user should see the last messages displayed in the chat "pasos"
