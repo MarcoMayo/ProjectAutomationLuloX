@@ -46,8 +46,8 @@ Automated testing for **LuloX** platform, covering both **Backend (REST API)** a
 - Internet connection (to reach the API)
 
 ➡️ Run Tests
-```
-gradle clean test --tests ObjectsRestApiRunner aggregate
+```bash
+./gradlew clean test --tests ObjectsRestApiRunner aggregate
 ```
 
 ➡️ Serenity Report  
@@ -65,8 +65,8 @@ LuloX_PruebaAuto/target/site/serenity/index.html
 - ChromeDriver (managed automatically with WebDriverManager)
 
 ➡️ Run Tests  
-```
-gradle clean test --tests ChatLuloXRunner aggregate
+```bash
+./gradlew clean test --tests ChatLuloXRunner aggregate
 ```
 
 ➡️ Serenity Report  

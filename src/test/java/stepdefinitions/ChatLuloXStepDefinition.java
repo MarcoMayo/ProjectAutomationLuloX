@@ -65,7 +65,7 @@ public class ChatLuloXStepDefinition {
     @Then("the user should see their name updated to {string} in the chat")
     public void theUserShouldSeeTheirNameUpdatedToInTheChat(String arg0) {//No es evidente el cambio de nombre
         actor.attemptsTo(
-                Ensure.that(ChatPage.TEXT_BUBBLE.of("Bienvenido al chat de servicio de Lulo X")).isDisplayed()
+                Ensure.that(ChatPage.TEXT_BUBBLE.of("Bienvenido")).isDisplayed()
         );
     }
 

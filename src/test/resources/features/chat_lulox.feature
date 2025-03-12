@@ -6,8 +6,8 @@ Feature: Interaction with of chat LuloX
     Then the user should see the sent message "<message>" displayed in the chat
 
     Examples:
-      | message                   |
-      | Hello, I want information |
+      | message                  |
+      | Hola, quiero informacion |
 
   Scenario Outline: The user interacts with the quick reply
     Given the user opens the LuloX homepage
