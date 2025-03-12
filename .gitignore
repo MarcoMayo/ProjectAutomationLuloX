@@ -1,0 +1,80 @@
+# ==========================================
+# Gradle
+# ==========================================
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle build output
+out/
+
+# Local configuration file (contains system-specific paths)
+gradle-app.setting
+
+# ==========================================
+# IntelliJ IDEA
+# ==========================================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# SonarLint working directory
+.sonarlint/
+
+# User-specific files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ==========================================
+# Serenity BDD output folders
+# ==========================================
+/target/
+.serenity/
+
+# Serenity aggregated test results
+/target/site/serenity/
+/target/site/thucydides/
+
+# ==========================================
+# Reports and logs
+# ==========================================
+/reports/
+/logs/
+/*.log
+
+# ==========================================
+# Java
+# ==========================================
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ / Eclipse specific
+*.classpath
+*.project
+*.settings/
+
+# ==========================================
+# Mac OS
+# ==========================================
+.DS_Store
+
+# ==========================================
+# Windows
+# ==========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==========================================
+# Node (if frontend automation includes JS tools)
+# ==========================================
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
